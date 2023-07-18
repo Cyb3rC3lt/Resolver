@@ -1,5 +1,5 @@
 # Resolve Python Utility
-A simple Python utility named resolve.py to help you resolve IPs to Hostnames. 
+A simple Python utility named resolve.py to help you resolve internal IPs to Hostnames. 
 
 It can take a single IP, multiple IPs or a file of IPs.
 
