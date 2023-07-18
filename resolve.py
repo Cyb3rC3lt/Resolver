@@ -4,7 +4,7 @@ import subprocess
 import sys
 import os
 
-class Lookup:
+class Resolve:
 
  if (os.path.isfile(sys.argv[1])):
     with open(sys.argv[1]) as ips:
