@@ -4,12 +4,12 @@ import subprocess
 import sys
 import os
 
-class Resolve:
+class Lookup:
 
  if (os.path.isfile(sys.argv[1])):
     with open(sys.argv[1]) as ips:
      for ip in ips:
-        ip = ip.rstrip('\n')
+        ip = ips.rstrip('\n')
         cmd = "nmblookup -A " + ip + "| sed -n 2p | cut -d ' ' -f1 | xargs"
         nmblookup = subprocess.run(
             ["sh", "-c", cmd],
@@ -17,7 +17,11 @@ class Resolve:
             stdout=subprocess.PIPE,
             check=True)
         hostname = nmblookup.stdout.split('\n')
-        print('{} : {}'.format(ip, hostname[0]))
+        if (hostname[0] == "No"):
+            print('{} : {}'.format(ip, "Unable to resolve this IP"))
+        else:
+            print('{} : {}'.format(ip, hostname[0]))
+
 
  else:
     for ip in sys.argv[1:]:
@@ -28,4 +32,7 @@ class Resolve:
             stdout=subprocess.PIPE,
             check=True)
         hostname = nmblookup.stdout.split('\n')
-        print('{} : {}'.format(ip, hostname[0]))
+        if (hostname[0] == "No"):
+            print('{} : {}'.format(ip, "Unable to resolve this IP"))
+        else:
+            print('{} : {}'.format(ip, hostname[0]))
