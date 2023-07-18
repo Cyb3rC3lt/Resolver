@@ -21,8 +21,6 @@ class Lookup:
             print('{} : {}'.format(ip, "Unable to resolve this IP"))
         else:
             print('{} : {}'.format(ip, hostname[0]))
-
-
  else:
     for ip in sys.argv[1:]:
         cmd = "nmblookup -A " + ip + "| sed -n 2p | cut -d ' ' -f1 | xargs"
