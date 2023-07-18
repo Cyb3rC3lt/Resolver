@@ -9,7 +9,7 @@ class Lookup:
  if (os.path.isfile(sys.argv[1])):
     with open(sys.argv[1]) as ips:
      for ip in ips:
-        ip = ips.rstrip('\n')
+        ip = ip.rstrip('\n')
         cmd = "nmblookup -A " + ip + "| sed -n 2p | cut -d ' ' -f1 | xargs"
         nmblookup = subprocess.run(
             ["sh", "-c", cmd],
