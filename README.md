@@ -1,5 +1,5 @@
 # Resolve
-A simple Python utility to help you resolve internal IPs to Hostnames via the dns server in resolve.conf. Just a wrapper around nmblookup.
+A simple Python utility to help you resolve internal IPs to Hostnames via the dns server in resolv.conf. Just a wrapper around nmblookup.
 
 It can take a single IP, multiple IPs or a file of IPs.
 
