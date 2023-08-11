@@ -3,6 +3,10 @@ A simple Python utility to help you resolve internal IPs to Hostnames via the dn
 
 It can take a single IP, multiple IPs or a file of IPs.
 
+`resolver.py 192.168.23.44`
 
+`resolver.py 192.168.23.44 192.168.23.45`
+
+`resolver.py targets.txt`
 
 
