@@ -8,8 +8,10 @@ class Resolver:
 
  # Process a file
  if (os.path.isfile(sys.argv[1])):
+
     with open(sys.argv[1]) as ips:
-     for ip in ips:
+     nonblankips = filter(None, (ip1.rstrip() for ip1 in ips))
+     for ip in nonblankips:
         ip = ip.rstrip('\n')
         cmd = "nslookup " + ip
         try:
