@@ -26,11 +26,8 @@ class Resolver:
         
         nslookup = nslookup.stdout.split('\n')
         hostnamesplit = nslookup[0].split('=')
-        hostname = hostnamesplit[1][:len(hostnamesplit[1])-1]
-        if ("fin" in hostname):
-            print('{} : {}'.format(ip, "Unable to resolve this IP"))
-        else:
-            print('{} : {}'.format(ip, hostname))  
+        hostname = hostnamesplit[1][:len(hostnamesplit[1])-1] 
+        print('{} : {}'.format(ip, hostname))  
  
  # Process single IPs  
  else:
@@ -49,7 +46,4 @@ class Resolver:
         nslookup = nslookup.stdout.split('\n')
         hostnamesplit = nslookup[0].split('=')
         hostname = hostnamesplit[1][:len(hostnamesplit[1])-1]
-        if ("fin" in hostname):
-            print('{} : {}'.format(ip, "Unable to resolve this IP"))
-        else:
-            print('{} : {}'.format(ip, hostname))
+        print('{} : {}'.format(ip, hostname))
