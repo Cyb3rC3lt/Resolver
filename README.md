@@ -1,12 +1,12 @@
 # Resolver
-A simple Python utility to help you resolve internal IPs to Hostnames via the dns server in resolv.conf. It's just a wrapper around nslookup.
+A simple Python utility to help you resolve internal IPs to Hostnames or vice versa.
 
-It can take a single IP, multiple IPs or a file of IPs.
+It can take a single IP/Hostname or a file of IPs/Hostnames or a mixture of them.
 
 `resolver.py 192.168.23.44`
 
-`resolver.py 192.168.23.44 192.168.23.45`
+`resolver.py dc.test.com`
 
-`resolver.py targets.txt`
+`resolver.py -i targets.txt -o resolved.txt`
 
 
